@@ -121,7 +121,7 @@ const Contact = () => {
         )}
       </form>
       <div className="cta-btn">
-        <Link to="/login">Login</Link>
+        <Link to="/admin">Login</Link>
       </div>
     </div>
   );

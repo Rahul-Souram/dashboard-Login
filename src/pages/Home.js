@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeImage from "../images/home.jpg";
+import { SlideInAnimation } from "../components/SlideInAnimation";
 export default function App() {
   return (
     <div className="container">
       <div className="section-container">
-      <div className="section-container-inner">
+      <SlideInAnimation direction="right" className="section-container-inner">
       <h1 className="title">Brand Radiator</h1>
         <div className="tagline">
           Brand Radiator is a team of gallant and fearless design technologists,
@@ -30,10 +31,10 @@ export default function App() {
         <div className="cta-btn">
           <Link to="/about">About us</Link>
         </div>
-      </div>
-      <div className="section-image">
+      </SlideInAnimation>
+      <SlideInAnimation direction="left" className="section-image">
         <img src={HomeImage} alt="Home" />
-      </div>
+      </SlideInAnimation>
       </div>
     </div>
   );
