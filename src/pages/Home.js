@@ -1,147 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
+import React from "react";
 import { Link } from "react-router-dom";
-
+import HomeImage from "../images/home.jpg";
 export default function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const [signupSuccess, setSignupSuccess] = useState(false);
-
-  const onSubmit = (data) => {
-    setList(data);
-    setSignupSuccess(true);
-  };
-
-  const getLocalStorage = () => {
-    let list = localStorage.getItem("list");
-    if (list) {
-      return (list = JSON.parse(localStorage.getItem("list")));
-    } else {
-      return [];
-    }
-  };
-  const [list, setList] = useState(getLocalStorage());
-  useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(list));
-  }, [list]);
   return (
-    <div className="form-wrapper-container">
-      <form onSubmit={handleSubmit(onSubmit)} className="form-container">
-        <h2>Sign Up Form</h2>
-        <div className="form-container-inner">
-          <div className="formfield-container">
-            <label htmlFor="name" className="formfield-label">
-              Full Name :
-              <input
-                {...register("name", {
-                  required: {
-                    value: true,
-                    message: "Name is required",
-                  },
-                  pattern: {
-                    value: /^[a-zA-Z ]+$/g,
-                    message: "Invalid Name. Avoid Special characters",
-                  },
-                })}
-              />
-            </label>
-            {errors.email && (
-              <div className="error-message">{errors.name?.message}</div>
-            )}
-          </div>
-          <div className="formfield-container">
-            <label htmlFor="email" className="formfield-label">
-              Email Address :
-              <input
-                id="email"
-                type="email"
-                {...register("email", {
-                  required: {
-                    value: true,
-                    message: "Email is required",
-                  },
-                  pattern: {
-                    value:
-                      /^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/g,
-                    message: "Invalid Email",
-                  },
-                })}
-              />
-            </label>
-            {errors.email && (
-              <div className="error-message">{errors.email?.message}</div>
-            )}
-          </div>
-          <div className="formfield-container">
-            <label htmlFor="name" className="formfield-label">
-              Password :
-              <input
-                type="password"
-                {...register("password", {
-                  required: {
-                    value: true,
-                    message: "Password is required",
-                  },
-                })}
-              />
-            </label>
-            {errors.email && (
-              <div className="error-message">{errors.password?.message}</div>
-            )}
-          </div>
-          <div className="formfield-container">
-            <label htmlFor="contactno" className="formfield-label">
-              Contact Number :
-              <input
-                id="contactno"
-                type="number"
-                {...register("phoneNo", {
-                  required: {
-                    value: true,
-                    message: "Number is required",
-                  },
-                })}
-              />
-            </label>
-            {errors.phoneNo && (
-              <div className="error-message">{errors.phoneNo?.message}</div>
-            )}
-          </div>
-          <div className="formfield-container">
-            <label htmlFor="position" className="formfield-label">
-              select role :
-            </label>
-            <select
-              {...register("position", {
-                required: {
-                  value: true,
-                  message: "This is required",
-                },
-              })}
-            >
-              <option value="frontend-dev">frontend dev</option>
-              <option value="backend-dev">backend dev</option>
-              <option value="fullstack-dev">fullstack dev</option>
-            </select>
-            {errors.position && (
-              <div className="error-message">{errors.position?.message}</div>
-            )}
-          </div>
-          <button type="submit" className="cta-btn">
-            Sign Up
-          </button>
+    <div className="container">
+      <div className="section-container">
+      <div className="section-container-inner">
+      <h1 className="title">Brand Radiator</h1>
+        <div className="tagline">
+          Brand Radiator is a team of gallant and fearless design technologists,
+          providing strategic solution made with our fingers on the pulse of
+          market trends and the competitive landscape. While our digital world
+          evolves and changes dynamically, the yardstick of quality work and
+          people first remains constant for us.
         </div>
-        {signupSuccess && (
-          <div className="success-message">
-            You are successfully registered !
-          </div>
-        )}
-      </form>
-      <div className="cta-btn">
-        <Link to="/login">Login</Link>
+        <div className="content">
+          Himani Mishra, C0-Founder and CEO, Brand Radiator, has been honored as
+          the winner of the Digital Women Award 2018 by SheThePeople.tv,
+          organized in association with Bombay Stock Exchange(BSE), Axis Bank,
+          Facebook, Business Standard and ColorsTV. The award event was
+          organized at the famous and historic Rotunda hall of iconic Bombay
+          Stock Exchange, the Dalal Street, Mumbai on Sunday, 18th November.
+          This is the largest ever womens summit and award ceremony organized by
+          SheThePeople.tv aimed to celebrate and cherish the women power shining
+          bright in the digital & technological space. The prestigious Digital
+          Women Award recognizes Himanis unbeaten success in the digital
+          marketing industry.
+        </div>
+        <div className="cta-btn">
+          <Link to="/about">About us</Link>
+        </div>
+      </div>
+      <div className="section-image">
+        <img src={HomeImage} alt="Home" />
+      </div>
       </div>
     </div>
   );

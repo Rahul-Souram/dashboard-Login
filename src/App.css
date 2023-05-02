@@ -6,7 +6,7 @@
 /* Navbar stylings */
 
 .navbar {
-  background-color: #3c3654;
+  background-color: #7359db;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -106,7 +106,7 @@
   }
 
   .nav-menu.active {
-    background-color: #3c3654;
+    background-color: #7359db;
     left: 0px;
     opacity: 1;
     transition: all 0.5s ease;
@@ -145,7 +145,7 @@
   font-size: 14px;
 }
 .cta-btn {
-  background: #3c3654;
+  background: #7359db;
   padding: 1rem 1.5rem;
   border: none;
   border-radius: 5px;
@@ -179,6 +179,10 @@
   border: 1px solid gray;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
+  display: block;
+}
+.form-container.hide {
+  display: none;
 }
 .form-container-inner {
   padding: 2rem;
@@ -194,21 +198,66 @@ select {
   padding: 0.3rem;
 }
 
-/* About */
-.about-section-container {
-  margin: 5% auto;
-  padding: 2% 5%;
-  max-width: 90%;
+/* About & Home */
+.title {
+  margin: 1rem auto;
+  text-align: center;
+}
+.section-container{
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
+@media (min-width:768px) {
+  .section-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .section-container-inner{
+    width: 48%;
+  }
+  .section-image{
+    width: 48%;
+  }
+}
+.section-image img {
+  width: 100%;
+}
+.section-container-inner{
+  margin: 1rem auto;
+}
+.tagline{
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.content{
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
 
-.about-container {
+.container{
+  padding: 0 10%;
+}
+
+.footer-container{
+  background: #7359db;
+  color: #fff;
   display: flex;
-  justify-content: center;
+  padding: 2rem;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-title{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.footer-wrapper{
+  display: flex;
   flex-direction: column;
-  line-height: 1.5;
-  padding: 1rem;
+}
+
+.footer-wrapper a {
+  color: #fff;
+  text-decoration: none;
 }

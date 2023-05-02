@@ -10,8 +10,9 @@ const NavBar = () => {
   const Close = () => setClick(false);
   const menuNav = [
     { title: "Home", slug: "/" },
-    { title: "CompanyInfo", slug: "/companyinfo" },
-    { title: "Login", slug: "/login" },
+    { title: "About", slug: "/about" },
+    { title: "Contact", slug: "/contact" },
+    { title: "Admin", slug: "/admin" },
   ];
   return (
     <div>
@@ -19,7 +20,7 @@ const NavBar = () => {
       <nav className="navbar" onClick={(e) => e.stopPropagation()}>
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo" onClick={()=> setClick(false)}>
-            MoviesOnline
+            Brand Radiator
           </NavLink>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             {menuNav.map((item) => {

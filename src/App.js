@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Login from "./pages/Login";
+import Login from "./pages/Admin";
 import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
 import About from './pages/About';
+import Contact from './pages/Contact';
 import NavBar from "./components/Navbar";
-
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,14 +14,12 @@ function App() {
    <BrowserRouter>
    <NavBar />
       <Routes>
-        {/* <Route path="/" element={<><Layout /></>}>
-          <Route index element={<SignUp />} /> */}
            <Route path="/" Component={Home} />
-          <Route path="/login" Component={Login} />
-          <Route path="/dashboard" Component={Dashboard} />
-          <Route path="/companyinfo" Component={About} />
-        {/* </Route> */}
+          <Route path="/admin" Component={Login} />
+          <Route path="/about" Component={About} />
+          <Route path="/contact" Component={Contact} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
  
     </div>
